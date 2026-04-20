@@ -1,18 +1,62 @@
-<script>
-function castVote(vote) {
-    // Existing voting functionality
-    // (insert original voting code here if needed)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>TN CM Mock Election 2026</title>
+</head>
+<body>
+    <header>
+        <h1>TN CM Mock Election 2026</h1>
+    </header>
+    <main>
+        <section id="voter-authentication">
+            <h2>Voter Authentication</h2>
+            <form id="auth-form">
+                <label for="voter-id">Voter ID:</label>
+                <input type="text" id="voter-id" name="voter-id" required>
+                <button type="submit">Authenticate</button>
+            </form>
+        </section>
+        <section id="candidate-selection">
+            <h2>Select Your Candidate</h2>
+            <form id="candidate-form">
+                <label for="candidate">Choose a candidate:</label>
+                <select id="candidate" name="candidate" required>
+                    <option value="candidate1">Candidate 1</option>
+                    <option value="candidate2">Candidate 2</option>
+                    <option value="candidate3">Candidate 3</option>
+                </select>
+                <button type="submit">Vote</button>
+            </form>
+        </section>
+        <section id="results">
+            <h2>Real-Time Voting Results</h2>
+            <div id="voting-results">
+                <!-- Real-time results will be displayed here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Admin Dashboard: <a href="admin.html">Click here</a></p>
+    </footer>
+    <script src="firebase.js"></script>
+    <script>
+        // Firebase Integration
+        // Initialize Firebase
+        const firebaseConfig = {
+            // Your Firebase configuration
+        };
+        firebase.initializeApp(firebaseConfig);
 
-    // Saving the vote
-    saveVote(vote);
+        // Function to update real-time results
+        function updateResults() {
+            // Code to fetch and display voting results from Firebase
+        }
 
-    // Redirect to results page after 2 seconds
-    setTimeout(function() {
-        window.location.href = 'results.html';
-    }, 2000);
-}
-
-function saveVote(vote) {
-    // Code to save the vote
-}
-</script>
+        // Call updateResults periodically
+        setInterval(updateResults, 5000);
+    </script>
+</body>
+</html>
